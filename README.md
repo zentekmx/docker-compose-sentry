@@ -64,6 +64,10 @@ sentry_sdk.init(
 )
 ```
 
+##### Supporte frameworks
+- Django <https://sentry.io/for/django/>
+- Spring <https://sentry.io/for/spring/>
+
 Extras
 ---------------
 #### Integrations
