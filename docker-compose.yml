@@ -4,7 +4,7 @@ services:
   redis:
     image: redis:5-alpine
     volumes:
-    - redis-volume:/data:Z
+     - redis-volume:/data:Z
 
   postgres:
     image: postgres:10
@@ -17,6 +17,9 @@ services:
 
   sentry:
     image: sentry
+    depends_on:
+     - redis
+     - postgres
     links:
      - redis
      - postgres
@@ -31,6 +34,9 @@ services:
 
   cron:
     image: sentry
+    depends_on:
+     - redis
+     - postgres
     links:
      - redis
      - postgres
@@ -44,6 +50,9 @@ services:
 
   worker:
     image: sentry
+    depends_on:
+     - redis
+     - postgres
     links:
      - redis
      - postgres
