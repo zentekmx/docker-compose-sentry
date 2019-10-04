@@ -13,7 +13,7 @@ services:
       POSTGRES_PASSWORD: ${SENTRY_DB_PASSWORD}
       POSTGRES_DB: sentry
     volumes:
-     - ${POSTGRES_VOLUME:-postgres-volume}:/var/lib/postgresql/data
+     - ${POSTGRES_VOLUME:-postgres-volume}:/var/lib/postgresql/data:Z
 
   sentry:
     image: sentry
